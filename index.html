@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔥 Free Fire India Hub</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts: Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Orbitron', Arial, sans-serif; }
+    
+    /* Mobile Responsive Optimizations */
+    @media (max-width: 768px) {
+      /* Navbar Mobile Optimizations */
+      .navbar-brand {
+        font-size: 1.2rem !important;
+      }
+      
+      .navbar-brand img {
+        height: 30px !important;
+        max-width: 35px !important;
+      }
+      
+      .navbar-nav {
+        text-align: center;
+        padding: 1rem 0;
+      }
+      
+      .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+      }
+      
+      .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+      }
+      
+      /* Hero Section Mobile Optimizations */
+      .hero-section {
+        min-height: 80vh !important;
+        padding: 2rem 0;
+        background: url('assets/hero.jpg') center center / cover no-repeat !important;
+        background-attachment: scroll !important;
+        position: relative !important;
+      }
+      
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+      }
+      
+      .hero-section .container {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .hero-section h1 {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+        margin-bottom: 1rem !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      }
+      
+      .hero-section .lead {
+        font-size: 1.2rem !important;
+        margin-bottom: 2rem !important;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      }
+      
+      .hero-section .btn {
+        font-size: 1rem !important;
+        padding: 0.75rem 1.5rem !important;
+        width: 100%;
+        max-width: 280px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Tournament Cards Mobile Optimizations */
+      .col-md-5 {
+        margin-bottom: 2rem;
+      }
+      
+      .card {
+        min-height: auto !important;
+        margin-bottom: 1rem;
+      }
+      
+      .card-body {
+        padding: 1.5rem !important;
+      }
+      
+      .card-body img {
+        height: 180px !important;
+        max-width: 100% !important;
+      }
+      
+      .card-title {
+        font-size: 1.3rem !important;
+        margin-bottom: 1rem !important;
+      }
+      
+      .card-body p {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+      
+      .card-body .btn {
+        font-size: 0.95rem !important;
+        padding: 0.75rem 1rem !important;
+        margin-top: 1rem !important;
+      }
+      
+      /* Tournaments Title Mobile Optimization */
+      .neon-tournaments {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 2rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      /* Community Cards Mobile Optimizations */
+      .community-card, .esports-card {
+        margin-bottom: 2rem;
+        max-width: 100% !important;
+      }
+      
+      .community-card-bg, .esports-card-bg {
+        min-height: 280px !important;
+        border-radius: 1rem !important;
+      }
+      
+      .community-card-content, .esports-card-content {
+        padding: 2rem 1.5rem !important;
+      }
+      
+      .community-title, .esports-title {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.2 !important;
+      }
+      
+      .community-subtitle, .esports-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+        line-height: 1.4 !important;
+      }
+      
+      .community-btn, .esports-btn {
+        font-size: 1rem !important;
+        padding: 0.875rem 2rem !important;
+        border-radius: 50px !important;
+        min-height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      
+      .community-badge, .esports-badge {
+        font-size: 0.8rem !important;
+        padding: 0.5rem 1rem !important;
+        margin: 1rem !important;
+      }
+      
+      /* Fix card layout on mobile */
+      .col-lg-6 {
+        margin-bottom: 1.5rem;
+      }
+      
+      /* Improve card shadows and borders */
+      .community-card, .esports-card {
+        border-radius: 1rem !important;
+        overflow: hidden !important;
+      }
+      
+      /* Fix overlap issues on mobile */
+      .community-card-content, .esports-card-content {
+        position: relative !important;
+        z-index: 3 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        min-height: 280px !important;
+      }
+      
+      .community-card-content .flex-grow-1:first-child {
+        flex: 0 0 auto !important;
+        height: 60px !important;
+      }
+      
+      .community-card-content .flex-grow-1:last-child {
+        flex: 0 0 auto !important;
+        height: 20px !important;
+      }
+      
+      .community-card-content h3,
+      .esports-card-content h3 {
+        margin-top: 0 !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      .community-card-content p,
+      .esports-card-content p {
+        margin-bottom: 1.5rem !important;
+        line-height: 1.4 !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+      
+      .community-card-content .btn,
+      .esports-card-content .btn {
+        margin-top: auto !important;
+        margin-bottom: 0 !important;
+        align-self: flex-start !important;
+      }
+      
+      /* Fix badge positioning */
+      .community-badge, .esports-badge {
+        position: absolute !important;
+        top: 1rem !important;
+        left: 1rem !important;
+        z-index: 4 !important;
+        margin: 0 !important;
+      }
+      
+      /* Ensure proper card structure */
+      .community-card-bg, .esports-card-bg {
+        position: relative !important;
+        display: flex !important;
+        align-items: stretch !important;
+      }
+      
+      .community-card-overlay, .esports-card-overlay {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 2 !important;
+      }
+      
+      /* About Section Mobile Optimizations */
+      #about {
+        padding: 3rem 0 !important;
+      }
+      
+      #about h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      
+      #about .lead {
+        font-size: 1.1rem !important;
+        margin-bottom: 2rem !important;
+      }
+      
+      #about ul li {
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+      }
+      
+      #about img {
+        max-width: 100% !important;
+        min-width: auto !important;
+        margin-top: 2rem;
+      }
+      
+      /* Footer Mobile Optimizations */
+      .footer-section {
+        padding: 3rem 0 !important;
+      }
+      
+      .footer-section h6 {
+        font-size: 1.1rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      
+      .footer-section ul li {
+        margin-bottom: 0.75rem !important;
+      }
+      
+      .footer-section .footer-link {
+        font-size: 0.95rem !important;
+      }
+      
+      /* Section Spacing Mobile Optimizations */
+      .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+      
+      .mb-5 {
+        margin-bottom: 2rem !important;
+      }
+      
+      /* Container Padding Mobile */
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      /* Modal Mobile Optimizations */
+      .modal-dialog {
+        margin: 1rem;
+        max-width: calc(100% - 2rem);
+      }
+      
+      .modal-content {
+        border-radius: 15px;
+      }
+      
+      .modal-header {
+        padding: 1rem 1.5rem;
+      }
+      
+      .modal-body {
+        padding: 1.5rem;
+      }
+      
+      .modal-footer {
+        padding: 1rem 1.5rem;
+      }
+      
+      .coming-soon-title {
+        font-size: 2rem !important;
+      }
+      
+      .feature-preview-item {
+        padding: 0.75rem !important;
+      }
+      
+      .feature-preview-item i {
+        font-size: 1.2rem !important;
+      }
+      
+      .feature-preview-item small {
+        font-size: 0.8rem !important;
+      }
+    }
+    
+    /* Extra Small Mobile Devices */
+    @media (max-width: 576px) {
+      .hero-section h1 {
+        font-size: 2rem !important;
+      }
+      
+      .hero-section .lead {
+        font-size: 1.1rem !important;
+      }
+      
+      /* Hero background optimization for small mobile */
+      .hero-section {
+        background-position: center 20% !important;
+        background-size: cover !important;
+      }
+      
+      .hero-section::before {
+        background: rgba(0, 0, 0, 0.5);
+      }
+      
+      .card-body img {
+        height: 160px !important;
+      }
+      
+      .community-card-bg, .esports-card-bg {
+        min-height: 220px !important;
+      }
+      
+      .community-title, .esports-title {
+        font-size: 1.5rem !important;
+      }
+      
+      .community-subtitle, .esports-subtitle {
+        font-size: 0.95rem !important;
+      }
+      
+      .community-card-content, .esports-card-content {
+        padding: 1.5rem 1rem !important;
+      }
+      
+      .community-btn, .esports-btn {
+        font-size: 0.95rem !important;
+        padding: 0.75rem 1.5rem !important;
+      }
+      
+      /* Coming Soon Modal Small Mobile Responsive */
+      .modal-content {
+        margin: 0.25rem;
+        border-radius: 12px;
+      }
+      
+      .modal-header {
+        padding: 0.75rem 1rem;
+      }
+      
+      .modal-header .modal-title {
+        font-size: 1.1rem;
+      }
+      
+      .modal-header img {
+        height: 20px;
+        max-width: 20px;
+      }
+      
+      .modal-body {
+        padding: 0.75rem;
+      }
+      
+      .coming-soon-icon i {
+        font-size: 1.5rem !important;
+      }
+      
+      .modal-body h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+      }
+      
+      .modal-body .lead {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      .features-preview {
+        margin-bottom: 1rem;
+      }
+      
+      .features-preview .col-6 {
+        padding: 0.25rem;
+      }
+      
+      .feature-preview-item {
+        padding: 0.4rem 0.2rem;
+        min-height: 40px;
+      }
+      
+      .feature-preview-item i {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+      }
+      
+      .feature-preview-item small {
+        font-size: 0.7rem;
+      }
+      
+      .progress {
+        height: 4px;
+        margin-bottom: 0.5rem;
+      }
+      
+      .modal-body small {
+        font-size: 0.7rem;
+      }
+      
+      .modal-footer {
+        padding: 0.75rem 1rem;
+      }
+      
+      .modal-footer .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1.25rem;
+        min-height: 36px;
+      }
+      
+      /* Tournaments Title Small Mobile Optimization */
+      .neon-tournaments {
+        font-size: 2rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      
+      /* Fix overlap issues for small mobile */
+      .community-card-content, .esports-card-content {
+        min-height: 220px !important;
+        padding: 1.5rem 1rem !important;
+      }
+      
+      .community-card-content .flex-grow-1:first-child {
+        height: 50px !important;
+      }
+      
+      .community-card-content .flex-grow-1:last-child {
+        height: 15px !important;
+      }
+      
+      .community-card-content h3,
+      .esports-card-content h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+      
+      .community-card-content p,
+      .esports-card-content p {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+      }
+      
+      .community-badge, .esports-badge {
+        font-size: 0.7rem !important;
+        padding: 0.4rem 0.8rem !important;
+        top: 0.75rem !important;
+        left: 0.75rem !important;
+      }
+      
+      .navbar-brand {
+        font-size: 1rem !important;
+      }
+      
+      .navbar-brand img {
+        height: 25px !important;
+        max-width: 30px !important;
+      }
+    }
+    
+    /* Touch-friendly improvements */
+    @media (max-width: 768px) {
+      .btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .navbar-toggler {
+        padding: 0.5rem;
+        border: 1px solid rgba(255, 107, 53, 0.3);
+      }
+      
+      .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
+      }
+      
+      /* General mobile overlap fixes */
+      * {
+        box-sizing: border-box;
+      }
+      
+      .container {
+        overflow-x: hidden;
+      }
+      
+      .row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      .col-lg-6, .col-md-5, .col-md-3 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+      }
+      
+      /* Fix text overflow */
+      h1, h2, h3, h4, h5, h6, p, span, a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+      
+      /* Fix button text overflow */
+      .btn {
+        white-space: normal;
+        text-align: center;
+        word-wrap: break-word;
+      }
+      
+      /* Fix card content overflow */
+      .card-body {
+        overflow: hidden;
+      }
+      
+      /* Fix modal overlap */
+      .modal {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      
+      .modal-dialog {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+      }
+      
+      /* Coming Soon Modal Mobile Responsive */
+      .modal-content {
+        border-radius: 15px;
+        margin: 0.5rem;
+      }
+      
+      .modal-header {
+        padding: 1rem 1.5rem;
+        border-bottom: 2px solid #ff6b35;
+      }
+      
+      .modal-header .modal-title {
+        font-size: 1.2rem;
+      }
+      
+      .modal-header img {
+        height: 25px;
+        max-width: 25px;
+      }
+      
+      .modal-body {
+        padding: 0.75rem;
+      }
+      
+      .coming-soon-icon {
+        margin-bottom: 0.25rem;
+      }
+      
+      .coming-soon-icon i {
+        font-size: 1.5rem !important;
+      }
+      
+      .modal-body h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.25rem;
+        line-height: 1.1;
+      }
+      
+      .modal-body .lead {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+      }
+      
+      .features-preview {
+        margin-bottom: 0.75rem;
+      }
+      
+      .features-preview .row {
+        margin: 0;
+      }
+      
+      .features-preview .col-6 {
+        padding: 0.5rem;
+      }
+      
+      .feature-preview-item {
+        padding: 0.35rem 0.2rem;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+        min-height: 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .feature-preview-item:hover {
+        background: rgba(255, 107, 53, 0.1);
+        transform: translateY(-2px);
+      }
+      
+      .feature-preview-item i {
+        font-size: 1rem;
+        margin-bottom: 0.15rem;
+      }
+      
+      .feature-preview-item small {
+        font-size: 0.7rem;
+        text-align: center;
+        line-height: 1.1;
+        font-weight: 500;
+      }
+      
+      .progress {
+        height: 6px;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.1);
+        margin-bottom: 1rem;
+      }
+      
+      .progress-bar {
+        border-radius: 3px;
+        background: linear-gradient(90deg, #ff6b35, #f7931e);
+      }
+      
+      .modal-body small {
+        font-size: 0.8rem;
+        color: #cccccc;
+      }
+      
+      .modal-footer {
+        padding: 1rem 1.5rem;
+        border-top: 2px solid #ff6b35;
+      }
+      
+      .modal-footer .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    
+    /* Landscape Mobile Optimizations */
+    @media (max-width: 768px) and (orientation: landscape) {
+      .hero-section {
+        min-height: 60vh !important;
+        padding: 1rem 0;
+        background-position: center 30% !important;
+      }
+      
+      .hero-section h1 {
+        font-size: 2rem !important;
+      }
+      
+      .hero-section .lead {
+        font-size: 1rem !important;
+      }
+      
+      .hero-section::before {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+  </style>
+</head>
+<body class="bg-dark text-white">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top shadow" style="position: fixed; top: 0; width: 100%; z-index: 1030;">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3 d-flex align-items-center gap-2" href="#">
+        <img src="assets/logo.png" alt="EsportsHub Logo" height="38" style="max-width:44px; object-fit:contain;">
+        <span>EsportsHub</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tournaments">Tournaments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#community-esports">Community & Members</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center justify-content-center text-center" style="min-height:100vh; background: url('assets/hero.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; position:relative;">
+    <div class="container position-relative z-2">
+      <h1 class="display-2 fw-bold neon-text mb-3"><span class="fire-text">Compete. Connect. Conquer.</span></h1>
+      <p class="lead fs-3 mb-4">India's Ultimate Free Fire Battleground</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="#tournaments" class="btn btn-neon-orange btn-lg fw-bold">Join Tournament</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tournaments Section -->
+  <section id="tournaments" class="py-5 bg-dark">
+    <div class="tournament-bg-3d">
+      <div class="neon-line" style="left:10%"></div>
+      <div class="neon-line"></div>
+      <div class="neon-line"></div>
+      <div class="neon-line"></div>
+      <div class="glow-dot"></div>
+      <div class="glow-dot"></div>
+      <div class="glow-dot"></div>
+    </div>
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold neon-text neon-tournaments">🏆 Tournaments</h2>
+      <div class="row g-5 justify-content-center">
+
+        <!-- Free Fire Tournament Card: With Entry Fee -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card bg-black text-white border-neon-red h-100" style="min-height: 420px;">
+            <div class="card-body d-flex flex-column align-items-center" style="padding-bottom: 1rem;">
+              <img src="assets/fee.jpg" alt="Entry Fee" class="img-fluid rounded-3 mb-3 border border-neon-red" style="height:200px; width:100%; object-fit:cover; max-width:350px;">
+              <span class="badge bg-danger mb-2">Entry Fee: ₹30</span>
+              <h5 class="card-title fs-4 text-center">BR SQUAD ARENA</h5>
+              <p class="mb-1 text-center"><i class="bi bi-calendar-event"></i> Sunday - 8:00 PM (BR)</p>
+              <p class="mb-1 text-center"><i class="bi bi-people"></i> Squad Tournament</p>
+              <p class="mb-1 text-center"><i class="bi bi-cash-coin"></i> Prize Pool: ₹310</p>
+              <div class="prize-breakdown mb-2 text-center">
+                <small class="text-success">🥇 ₹130 | 🥈 ₹100 | 🥉 ₹80</small>
+              </div>
+              <div class="features-list mb-3">
+                <div class="row g-2">
+                  <div class="col-12">
+                    <small class="text-primary"><i class="bi bi-trophy"></i> Qualifier Matches</small>
+                  </div>
+                </div>
+              </div>
+              <p class="mb-2 text-center"><small class="text-muted">Organized by @OLD SCHOOL GUILD MEMBERS</small></p>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSelRhHiBJZm_LnG_roU9Sp4JCTemeF-l_469t0gO-8s1FDaBw/viewform?usp=dialog" target="_self" class="btn btn-neon-red mt-auto w-100">Join Tournament</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community & Esports Cards Section -->
+  <section id="community-esports" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row justify-content-center g-4">
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="community-card card border-0 shadow-lg overflow-hidden w-100" style="max-width: 600px; background: none;">
+            <div class="community-card-bg position-relative" style="background: url('assets/community.jpg') center/cover no-repeat; min-height: 320px; border-radius: 1.5rem;">
+              <div class="community-card-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(10, 10, 20, 0.75); border-radius: 1.5rem;"></div>
+              <span class="badge bg-neon-orange position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill fw-bold text-uppercase community-badge" style="z-index:2; letter-spacing:1px; font-size:0.95rem;">COMMUNITY</span>
+              <div class="community-card-content position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-start p-4" style="z-index:2;">
+                <div class="flex-grow-1"></div>
+                <h3 class="fw-bold text-white mb-2 community-title" style="font-size:2.1rem; font-family: 'Orbitron', Arial, sans-serif;">Join Our Community</h3>
+                <p class="text-white-50 mb-3 community-subtitle" style="font-size:1.1rem; font-weight:500; font-family: 'Orbitron', Arial, sans-serif;">Join our community to connect with other players and find tournaments</p>
+                <a href="#" class="btn btn-neon-orange fw-bold px-4 py-2 rounded-pill community-btn ms-0" style="font-size:1.1rem; letter-spacing:1px;">Join Now</a>
+                <div class="flex-grow-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="esports-card card border-0 shadow-lg overflow-hidden w-100" style="max-width: 600px; background: none;">
+            <div class="esports-card-bg position-relative" style="background: url('assets/Member.jpg') center/cover no-repeat; min-height: 340px;">
+              <div class="esports-card-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.7);"></div>
+              <span class="badge bg-neon-orange position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill fw-bold text-uppercase esports-badge" style="z-index:2; letter-spacing:1px; font-size:0.95rem;">Members</span>
+              <div class="esports-card-content position-absolute w-100 h-100 d-flex flex-column justify-content-center align-items-start p-4" style="z-index:2;">
+                <div class="flex-grow-1"></div>
+                <h3 class="fw-bold text-white mb-2 esports-title" style="font-size:2.1rem;">Host your own tournament</h3>
+                <p class="text-white-50 mb-3 esports-subtitle" style="font-size:1.1rem; font-weight:500;">Host your own tournament and earn money</p>
+                <a href="#" class="btn btn-neon-orange fw-bold px-4 py-2 rounded-pill esports-btn" style="font-size:1.1rem; letter-spacing:1px;">Join As Member</a>
+                <div class="flex-grow-1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-5" style="background: #13131a;">
+    <div class="container">
+      <div class="row align-items-center justify-content-center flex-lg-row flex-column-reverse">
+        <div class="col-lg-6 mt-4 mt-lg-0 animate-fadein">
+          <h2 class="fw-bold mb-3" style="color: #fff; font-family: 'Orbitron', Arial, sans-serif;">Why EsportsHub?</h2>
+          <p class="lead mb-4" style="color: #e0e0e0; font-family: 'Orbitron', Arial, sans-serif;">
+            EsportsHub is India’s leading platform for Free Fire players to compete, host tournaments, and grow as professional gamers. We’re building a community where players can connect, earn, and rise to glory.
+          </p>
+          <ul class="list-unstyled mb-0" style="font-size: 1.13rem;">
+            <li class="d-flex align-items-center mb-3"><span class="me-3 fs-4">🇮🇳</span> <span class="text-white-50">100% Indian Gamer Community</span></li>
+            <li class="d-flex align-items-center mb-3"><span class="me-3 fs-4">🏆</span> <span class="text-white-50">Real-Time Tournaments & Rankings</span></li>
+            <li class="d-flex align-items-center mb-3"><span class="me-3 fs-4">💰</span> <span class="text-white-50">Host & Monetize Your Own Matches</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-center animate-slideup">
+          <img src="assets/about.jpg" alt="About EsportsHub" class="img-fluid rounded-4 shadow-lg" style="max-width: 420px; min-width: 220px; object-fit: cover; border: 3px solid #2196f3;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-section py-5 bg-black text-secondary" style="font-family: 'Orbitron', Arial, sans-serif;">
+    <div class="container">
+      <div class="row gy-4 align-items-start">
+        <div class="col-md-3">
+          <h6 class="text-uppercase fw-bold mb-3 text-white">Quick Links</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#" class="footer-link">Home</a></li>
+            <li><a href="#tournaments" class="footer-link">Tournaments</a></li>
+            <li><a href="#community-esports" class="footer-link">Community & Members</a></li>
+            <li><a href="#support" class="footer-link">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-uppercase fw-bold mb-3 text-white">📍 Location</h6>
+          <p class="mb-0">Proudly built for Indian gamers 🇮🇳</p>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-uppercase fw-bold mb-3 text-white">📬 Contact</h6>
+          <p class="mb-1">support@esportshub.in</p>
+          <h6 class="text-uppercase fw-bold mb-2 text-white mt-4">📣 Follow Us</h6>
+          <div class="d-flex gap-3">
+            <a href="#" class="footer-social-link" title="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="footer-social-link" title="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="footer-social-link" title="Discord"><i class="bi bi-discord"></i></a>
+            <a href="#" class="footer-social-link" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-uppercase fw-bold mb-3 text-white">🔒 Legal</h6>
+          <ul class="list-unstyled mb-0">
+            <li><a href="#" class="footer-link">Terms &amp; Conditions</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4" style="border-color: #222;">
+      <div class="text-center small text-white-50">
+        @2025 EsportsHub – Powered by Gamers, Built for Glory.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyD4vKkP5-ivUpku-e1yXiAkrLYF79-oPcM",
+      authDomain: "e-sports-hub-fa52e.firebaseapp.com",
+      projectId: "e-sports-hub-fa52e",
+      storageBucket: "e-sports-hub-fa52e.firebasestorage.app",
+      messagingSenderId: "240648264481",
+      appId: "1:240648264481:web:ba259f31626459520fbc60",
+      measurementId: "G-E09CXT6JRQ"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+
+  </script>
+  <script>
+    // Directional hover effect for tournament card images
+    document.querySelectorAll('#tournaments .card-body img').forEach(img => {
+      img.addEventListener('mouseenter', function(e) {
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        if (x > rect.width / 2) {
+          img.classList.add('hover-left');
+          img.classList.remove('hover-right');
+        } else {
+          img.classList.add('hover-right');
+          img.classList.remove('hover-left');
+        }
+      });
+      img.addEventListener('mouseleave', function() {
+        img.classList.remove('hover-left', 'hover-right');
+      });
+    });
+
+    // Navbar scroll effects
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.background = 'linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(26,26,26,0.95) 25%, rgba(45,45,45,0.95) 50%, rgba(26,26,26,0.95) 75%, rgba(0,0,0,0.95) 100%)';
+        navbar.style.boxShadow = '0 4px 20px rgba(255, 145, 0, 0.4), 0 0 40px rgba(255, 145, 0, 0.2)';
+      } else {
+        navbar.style.background = 'linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2d2d2d 50%, #1a1a1a 75%, #000000 100%)';
+        navbar.style.boxShadow = '0 4px 20px rgba(255, 145, 0, 0.3), 0 0 40px rgba(255, 145, 0, 0.1)';
+      }
+    });
+
+    // Active link management
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', function() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Navbar brand click effect
+    const navbarBrand = document.querySelector('.navbar-brand');
+    navbarBrand.addEventListener('click', function(e) {
+      e.preventDefault();
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+          this.style.transform = 'scale(1)';
+        }, 150);
+      }, 150);
+    });
+
+    // Add ripple effect to navbar links and auto-close mobile menu
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Ripple effect
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+        
+        // Auto-close mobile navbar after link click
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+          // Close the navbar
+          navbarCollapse.classList.remove('show');
+          if (navbarToggler) {
+            navbarToggler.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+
+
+  </script>
+
+  <!-- Coming Soon Modal -->
+  <div class="modal fade" id="comingSoonModal" tabindex="-1" aria-labelledby="comingSoonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white border-neon-orange">
+        <div class="modal-header border-bottom border-neon-orange">
+          <div class="d-flex align-items-center">
+            <img src="assets/logo.png" alt="EsportsHub Logo" height="30" class="me-2">
+            <h5 class="modal-title fw-bold" id="comingSoonModalLabel">EsportsHub</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center py-4">
+          <div class="coming-soon-icon mb-3">
+            <i class="bi bi-clock-history fs-1 text-neon-orange"></i>
+          </div>
+          <h3 class="fw-bold mb-3 text-neon-orange">Coming Soon!</h3>
+          <p class="lead mb-3">Free Fire Open Challenge tournament is launching soon!</p>
+          <div class="features-preview mb-4">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="feature-preview-item">
+                  <i class="bi bi-trophy text-success"></i>
+                  <small>Epic Tournaments</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="feature-preview-item">
+                  <i class="bi bi-people text-info"></i>
+                  <small>Community Hub</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="feature-preview-item">
+                  <i class="bi bi-cash-coin text-warning"></i>
+                  <small>Prize Pools</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="feature-preview-item">
+                  <i class="bi bi-controller text-danger"></i>
+                  <small>Live Gaming</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="progress mb-3" style="height: 8px;">
+            <div class="progress-bar bg-neon-orange" role="progressbar" style="width: 75%; animation: progressPulse 2s ease-in-out infinite;"></div>
+          </div>
+          <small class="text-muted">Development Progress: 75%</small>
+        </div>
+        <div class="modal-footer border-top border-neon-orange">
+          <button type="button" class="btn btn-neon-orange" data-bs-dismiss="modal">Got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .modal-content {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      border: 2px solid #ff6b35;
+      box-shadow: 0 0 30px rgba(255, 107, 53, 0.3);
+    }
+    
+    .coming-soon-icon {
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    @keyframes progressPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    .feature-preview-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .feature-preview-item:hover {
+      background: rgba(255, 107, 53, 0.1);
+      transform: translateY(-2px);
+    }
+    
+    .feature-preview-item i {
+      font-size: 1.5rem;
+    }
+    
+    .modal-dialog {
+      max-width: 500px;
+    }
+    
+    .border-neon-orange {
+      border-color: #ff6b35 !important;
+    }
+    
+    .text-neon-orange {
+      color: #ff6b35 !important;
+    }
+  </style>
+</body>
+</html> 

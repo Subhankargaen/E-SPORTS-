@@ -1,0 +1,989 @@
+/* Neon Colors */
+:root {
+  --neon-orange: #ff9100;
+  --neon-green: #39ff14;
+  --neon-red: #ff1744;
+  --dark-bg: #18181b;
+}
+
+body {
+  background: var(--dark-bg) !important;
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  letter-spacing: 1px;
+  padding-top: 80px; /* Add padding to account for fixed navbar */
+}
+
+/* Stylish Navbar Effects */
+.navbar {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #2d2d2d 50%, #1a1a1a 75%, #000000 100%) !important;
+  border-bottom: 2px solid var(--neon-orange);
+  box-shadow: 
+    0 4px 20px rgba(255, 145, 0, 0.3),
+    0 0 40px rgba(255, 145, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1030;
+  overflow: hidden;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 145, 0, 0.2), transparent);
+  animation: navbarShine 3s infinite;
+}
+
+@keyframes navbarShine {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.navbar-brand {
+  background: linear-gradient(45deg, var(--neon-orange), #fff, var(--neon-orange));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 2s ease-in-out infinite;
+  text-shadow: 0 0 20px var(--neon-orange);
+  transition: all 0.3s ease;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 30px var(--neon-orange), 0 0 40px var(--neon-orange);
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: #fff !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem;
+  border-radius: 8px;
+}
+
+.navbar-nav .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--neon-orange), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+  z-index: -1;
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+  opacity: 0.2;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--neon-orange) !important;
+  text-shadow: 0 0 10px var(--neon-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 145, 0, 0.3);
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--neon-orange);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 80%;
+  box-shadow: 0 0 10px var(--neon-orange);
+}
+
+/* Enhanced Login Button */
+.navbar .btn-outline-neon-orange {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--neon-orange);
+  background: transparent;
+  color: var(--neon-orange);
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 145, 0, 0.3);
+}
+
+.navbar .btn-outline-neon-orange::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 145, 0, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.navbar .btn-outline-neon-orange:hover::before {
+  left: 100%;
+}
+
+.navbar .btn-outline-neon-orange:hover {
+  background: var(--neon-orange);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(255, 145, 0, 0.4),
+    0 0 20px rgba(255, 145, 0, 0.2);
+}
+
+/* Navbar Toggler Enhancement */
+.navbar-toggler {
+  border: 2px solid var(--neon-orange);
+  box-shadow: 0 0 10px rgba(255, 145, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  box-shadow: 0 0 20px rgba(255, 145, 0, 0.5);
+  transform: scale(1.1);
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 145, 0, 0.25);
+}
+
+/* Responsive Navbar */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 145, 0, 0.3);
+  }
+  
+  .navbar-nav .nav-link {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+}
+
+/* Particle Effect for Navbar */
+.navbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 145, 0, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(255, 145, 0, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(255, 145, 0, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px, 30px 30px, 40px 40px;
+  animation: particleFloat 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-50px); }
+}
+
+/* Ripple Effect for Navbar Links */
+.navbar-nav .nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 145, 0, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Additional Navbar Enhancements */
+.navbar-nav .nav-link:not(.active):hover {
+  animation: navLinkPulse 0.3s ease-in-out;
+}
+
+@keyframes navLinkPulse {
+  0%, 100% { transform: translateY(-2px) scale(1); }
+  50% { transform: translateY(-2px) scale(1.05); }
+}
+
+/* Navbar container enhancement */
+.navbar .container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Enhanced mobile menu */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Neon Text */
+.neon-text {
+  color: var(--neon-orange);
+  text-shadow: 0 0 8px var(--neon-orange), 0 0 16px var(--neon-orange), 0 0 32px #fff2;
+}
+
+.text-neon-orange { color: var(--neon-orange) !important; }
+.text-neon-green { color: var(--neon-green) !important; }
+.text-neon-red { color: var(--neon-red) !important; }
+
+/* Glowing Buttons */
+.btn-neon-orange {
+  background: var(--neon-orange);
+  color: #18181b;
+  box-shadow: 0 0 12px var(--neon-orange), 0 0 24px #fff2;
+  border: none;
+  transition: 0.2s;
+}
+.btn-neon-orange:hover, .btn-neon-orange:focus {
+  background: #fff;
+  color: var(--neon-orange);
+  box-shadow: 0 0 24px var(--neon-orange), 0 0 48px #fff2;
+}
+
+.btn-neon-green {
+  background: var(--neon-green);
+  color: #18181b;
+  box-shadow: 0 0 12px var(--neon-green), 0 0 24px #fff2;
+  border: none;
+  transition: 0.2s;
+}
+.btn-neon-green:hover, .btn-neon-green:focus {
+  background: #fff;
+  color: var(--neon-green);
+  box-shadow: 0 0 24px var(--neon-green), 0 0 48px #fff2;
+}
+
+.btn-neon-red {
+  background: var(--neon-red);
+  color: #18181b;
+  box-shadow: 0 0 12px var(--neon-red), 0 0 24px #fff2;
+  border: none;
+  transition: 0.2s;
+}
+.btn-neon-red:hover, .btn-neon-red:focus {
+  background: #fff;
+  color: var(--neon-red);
+  box-shadow: 0 0 24px var(--neon-red), 0 0 48px #fff2;
+}
+
+/* Accent Borders for Cards */
+.border-neon-orange { border: 2px solid var(--neon-orange) !important; }
+.border-neon-green { border: 2px solid var(--neon-green) !important; }
+.border-neon-red { border: 2px solid var(--neon-red) !important; }
+
+/* Hero Section Overlay */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+.hero-section .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #18181b99 60%, #ff910099 100%);
+  z-index: 1;
+}
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .hero-section h1 { font-size: 2.2rem; }
+  .hero-section p { font-size: 1.1rem; }
+}
+
+/* Card Customization */
+.card {
+  border-radius: 1.2rem;
+  box-shadow: 0 0 16px #000a;
+}
+
+/* Footer */
+footer {
+  border-top: 2px solid var(--neon-orange);
+  font-size: 1rem;
+}
+
+/* Misc */
+ul { list-style: square inside; }
+
+.hero-section h1,
+.hero-section p,
+.hero-section .btn {
+  color: #fff !important;
+  text-shadow: 2px 2px 8px #000, 0 0 16px #000;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
+.fire-text {
+  font-family: 'Nosifer', 'Orbitron', Arial, sans-serif;
+  font-size: 4.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ff9100 20%, #ff1744 50%, #fff700 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow:
+    0 2px 8px #ff9100cc,
+    0 4px 16px #ff1744cc,
+    0 0 32px #fff70099;
+  letter-spacing: 2px;
+  filter: brightness(1.1) contrast(1.2);
+  animation: jump3d 1.8s cubic-bezier(.4,1.6,.6,1) infinite;
+  perspective: 400px;
+}
+@keyframes jump3d {
+  0% {
+    transform: translateY(0) scale(1) rotateX(0deg) skewX(0deg);
+    text-shadow:
+      0 2px 8px #ff9100cc,
+      0 4px 16px #ff1744cc,
+      0 0 32px #fff70099;
+  }
+  20% {
+    transform: translateY(-18px) scale(1.08) rotateX(18deg) skewX(-6deg);
+    text-shadow:
+      0 8px 24px #ff9100cc,
+      0 12px 32px #ff1744cc,
+      0 0 48px #fff70099;
+  }
+  40% {
+    transform: translateY(0) scale(1) rotateX(0deg) skewX(0deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotateX(0deg) skewX(0deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .fire-text {
+    font-size: 2.2rem;
+  }
+}
+
+/* Hero Section Button Hover Text Colors */
+.hero-section .btn-neon-orange:hover, .hero-section .btn-neon-orange:focus {
+  color: var(--neon-orange) !important;
+}
+.hero-section .btn-neon-green:hover, .hero-section .btn-neon-green:focus {
+  color: var(--neon-green) !important;
+}
+.hero-section .btn-neon-red:hover, .hero-section .btn-neon-red:focus {
+  color: var(--neon-red) !important;
+}
+
+.btn-outline-neon-orange {
+  border: 2px solid var(--neon-orange);
+  color: var(--neon-orange);
+  background: transparent;
+  box-shadow: 0 0 8px var(--neon-orange), 0 0 16px #fff2;
+  transition: 0.2s;
+}
+.btn-outline-neon-orange:hover, .btn-outline-neon-orange:focus {
+  background: var(--neon-orange);
+  color: #18181b;
+  box-shadow: 0 0 24px var(--neon-orange), 0 0 48px #fff2;
+  border-color: var(--neon-orange);
+}
+
+/* Tournament Cards Shadow and Hover Effects */
+#tournaments .card {
+  box-shadow: 0 4px 24px 0 #000c, 0 1.5px 8px 0 var(--neon-orange, #ff9100);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+#tournaments .card:hover, #tournaments .card:focus-within {
+  box-shadow: 0 8px 40px 0 #ff9100cc, 0 4px 32px 0 var(--neon-green, #39ff14);
+  transform: scale(1.035);
+  z-index: 2;
+}
+
+#tournaments .card-body img {
+  transition: transform 0.35s cubic-bezier(.4,2,.6,1), box-shadow 0.35s, filter 0.35s, border-color 0.35s;
+}
+#tournaments .card-body img.hover-left {
+  transform: scale(1.05) rotate(-3deg);
+  box-shadow: 0 0 32px 8px var(--neon-green, #39ff14), 0 0 48px 12px #fff2;
+  filter: brightness(1.15) contrast(1.1);
+  border-color: var(--neon-green, #39ff14) !important;
+}
+#tournaments .card-body img.hover-right {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 0 32px 8px var(--neon-orange, #ff9100), 0 0 48px 12px #fff2;
+  filter: brightness(1.15) contrast(1.1);
+  border-color: var(--neon-orange, #ff9100) !important;
+}
+
+.tournament-bg-3d {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.tournament-bg-3d .neon-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, #ff9100 0%, #39ff14 100%);
+  opacity: 0.18;
+  animation: moveLines 6s linear infinite;
+}
+.tournament-bg-3d .neon-line:nth-child(2) {
+  left: 30%;
+  animation-delay: 1.5s;
+}
+.tournament-bg-3d .neon-line:nth-child(3) {
+  left: 60%;
+  animation-delay: 3s;
+}
+.tournament-bg-3d .neon-line:nth-child(4) {
+  left: 80%;
+  animation-delay: 4.5s;
+}
+@keyframes moveLines {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+.tournament-bg-3d .glow-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff700 0%, #ff1744 60%, transparent 100%);
+  opacity: 0.13;
+  animation: floatDot 7s ease-in-out infinite alternate;
+}
+.tournament-bg-3d .glow-dot:nth-child(5) {
+  left: 15%; top: 30%; width: 40px; height: 40px; animation-delay: 0s; }
+.tournament-bg-3d .glow-dot:nth-child(6) {
+  left: 70%; top: 60%; width: 60px; height: 60px; animation-delay: 2s; }
+.tournament-bg-3d .glow-dot:nth-child(7) {
+  left: 50%; top: 80%; width: 30px; height: 30px; animation-delay: 4s; }
+@keyframes floatDot {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-40px) scale(1.2); }
+}
+#tournaments {
+  position: relative;
+  overflow: hidden;
+} 
+
+.typewriter-text {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: inherit;
+  color: #fff;
+  text-shadow: 0 0 8px #000, 0 0 16px #000a;
+}
+
+.typewriter-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.8em) scale(0.5);
+  border-radius: 1em;
+  background: rgba(255,255,255,0.08);
+  padding: 0.08em 0.18em;
+  margin: 0 0.01em;
+  box-shadow: 0 2px 8px #0004;
+  animation: pop-typewriter 0.5s cubic-bezier(.4,1.6,.6,1) forwards;
+}
+
+@keyframes pop-typewriter {
+  0% {
+    opacity: 0;
+    transform: translateY(0.8em) scale(0.5);
+    border-radius: 1em;
+    background: rgba(255,255,255,0.08);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-0.5em) scale(1.2);
+    border-radius: 1.2em;
+    background: rgba(255,255,255,0.18);
+  }
+  80% {
+    transform: translateY(0.1em) scale(1.05);
+    border-radius: 0.7em;
+    background: rgba(255,255,255,0.10);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    border-radius: 0.3em;
+    background: transparent;
+  }
+}
+
+@keyframes typing {
+  from { width: 0ch; }
+  to { width: 38ch; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--neon-orange); }
+}
+
+@keyframes pop-scale {
+  0%, 80% { transform: scale(1); text-shadow: 0 0 8px #000, 0 0 16px #000a; }
+  90%, 100% { transform: scale(1.08); text-shadow: 0 0 16px #000, 0 0 32px #000c; }
+} 
+
+/* Esports Card Styles (match Community Card) */
+.esports-card {
+  border-radius: 1.5rem;
+  transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s cubic-bezier(.4,2,.3,1);
+  box-shadow: 0 4px 32px 0 rgba(255, 145, 0, 0.12), 0 0 0 0 rgba(0,0,0,0.0);
+  max-width: 540px;
+  width: 100%;
+}
+.esports-card:hover {
+  transform: scale(1.035);
+  box-shadow: 0 8px 48px 0 rgba(255, 145, 0, 0.25), 0 0 32px 0 #ff9100;
+  z-index: 2;
+}
+.esports-card-bg {
+  border-radius: 1.5rem;
+  min-height: 320px;
+  position: relative;
+}
+.esports-card-overlay {
+  background: rgba(10, 10, 20, 0.75);
+  border-radius: 1.5rem;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+}
+.esports-badge {
+  background: linear-gradient(90deg, #ff9100 0%, #ff2d55 100%);
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 2px 12px 0 rgba(255, 145, 0, 0.18);
+}
+.esports-title {
+  font-size: 2.1rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 12px #ff9100, 0 0 24px #ff2d55;
+}
+.esports-subtitle {
+  font-size: 1.1rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 1px 8px #000;
+}
+@media (max-width: 576px) {
+  .esports-card-bg {
+    min-height: 220px;
+  }
+  .esports-title {
+    font-size: 1.3rem;
+  }
+  .esports-subtitle {
+    font-size: 0.95rem;
+  }
+} 
+
+.esports-btn {
+  margin-top: 1.5rem !important;
+} 
+
+/* Neon animated effect for Tournaments heading */
+.neon-tournaments {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow:
+    0 0 8px #ff9100,
+    0 0 16px #ff9100,
+    0 0 32px #ff2d55,
+    0 0 64px #00ffea;
+  animation: neon-flicker 2.2s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0%, 100% {
+    text-shadow:
+      0 0 8px #ff9100,
+      0 0 16px #ff9100,
+      0 0 32px #ff2d55,
+      0 0 64px #00ffea;
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  20% {
+    text-shadow:
+      0 0 12px #ff2d55,
+      0 0 24px #ff9100,
+      0 0 48px #00ffea,
+      0 0 96px #ff9100;
+    opacity: 0.95;
+  }
+  30%, 50%, 70% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  60% {
+    text-shadow:
+      0 0 16px #00ffea,
+      0 0 32px #ff2d55,
+      0 0 64px #ff9100,
+      0 0 128px #ff2d55;
+    opacity: 0.9;
+  }
+  80% {
+    opacity: 0.95;
+  }
+  90% {
+    opacity: 0.7;
+  }
+} 
+
+/* Community Card Styles */
+.community-card {
+  border-radius: 1.5rem;
+  transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s cubic-bezier(.4,2,.3,1);
+  box-shadow: 0 4px 32px 0 rgba(255, 145, 0, 0.12), 0 0 0 0 rgba(0,0,0,0.0);
+}
+.community-card:hover {
+  transform: scale(1.035);
+  box-shadow: 0 8px 48px 0 rgba(255, 145, 0, 0.25), 0 0 32px 0 #ff9100;
+  z-index: 2;
+}
+.community-card-bg {
+  border-radius: 1.5rem;
+  min-height: 320px;
+  position: relative;
+}
+.community-card-overlay {
+  background: rgba(10, 10, 20, 0.75);
+  border-radius: 1.5rem;
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+}
+.community-badge {
+  background: linear-gradient(90deg, #ff9100 0%, #ff2d55 100%);
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 2px 12px 0 rgba(255, 145, 0, 0.18);
+}
+.community-title {
+  font-size: 2.1rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 12px #ff9100, 0 0 24px #ff2d55;
+}
+.community-subtitle {
+  font-size: 1.1rem;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 1px 8px #000;
+}
+@media (max-width: 576px) {
+  .community-card-bg {
+    min-height: 220px;
+  }
+  .community-title {
+    font-size: 1.3rem;
+  }
+  .community-subtitle {
+    font-size: 0.95rem;
+  }
+} 
+
+/* Fix overlap between badge and content in Community card */
+.community-card-content {
+  padding-top: 3.5rem !important;
+}
+@media (max-width: 576px) {
+  .community-card-content {
+    padding-top: 2.5rem !important;
+  }
+}
+
+/* Fix overlap between badge and content in Esports card (Member card) */
+.esports-card-content {
+  padding-top: 3.5rem !important;
+}
+@media (max-width: 576px) {
+  .esports-card-content {
+    padding-top: 2.5rem !important;
+  }
+}
+
+/* Ensure both cards and their backgrounds have equal height */
+.community-card,
+.esports-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.community-card-bg,
+.esports-card-bg {
+  min-height: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 576px) {
+  .community-card-bg,
+  .esports-card-bg {
+    min-height: 220px;
+    height: 100%;
+  }
+} 
+
+/* Strong neon hover effects for Community and Member (Esports) cards */
+.community-card {
+  border: 2.5px solid transparent !important;
+}
+.community-card:hover {
+  box-shadow: 0 8px 48px 0 rgba(57, 255, 20, 0.45), 0 0 32px 0 #39ff14 !important;
+  border-color: #39ff14 !important;
+}
+.esports-card {
+  border: 2.5px solid transparent !important;
+}
+.esports-card:hover {
+  box-shadow: 0 8px 48px 0 rgba(255, 45, 85, 0.45), 0 0 32px 0 #ff2d55 !important;
+  border-color: #ff2d55 !important;
+} 
+
+/* Subtle border for Community and Member (Esports) cards in normal state */
+.community-card,
+  .esports-card {
+  border: 2.5px solid rgba(255,255,255,0.12) !important;
+} 
+
+/* Recently Played Matches Section Styles */
+#recent-matches .nav-tabs .nav-link.active {
+  color: #fff;
+  background: none;
+  border: none;
+  position: relative;
+}
+#recent-matches .nav-tabs .nav-link.active span {
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 3px;
+  background: #2196f3;
+  border-radius: 2px;
+}
+#recent-matches .nav-tabs .nav-link {
+  color: #aaa;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+#recent-matches .nav-tabs .nav-link:hover {
+  color: #2196f3;
+}
+.recent-matches-table {
+  background: transparent;
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+}
+.recent-matches-table th {
+  border: none;
+  color: #8ab4f8;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+}
+.recent-matches-table td {
+  border: none;
+  vertical-align: middle;
+  font-size: 1.05rem;
+}
+.recent-row {
+  transition: background 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+}
+.recent-row:hover {
+  background: #23233a;
+  box-shadow: 0 2px 16px 0 #2196f355;
+}
+.recent-row img {
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+.recent-row:hover img {
+  box-shadow: 0 0 0 2px #2196f3, 0 0 8px #2196f3;
+  border-color: #2196f3 !important;
+}
+.btn-neon-blue {
+  background: linear-gradient(90deg, #2196f3 0%, #00eaff 100%);
+  color: #fff;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-weight: 700;
+  box-shadow: 0 0 8px #2196f3, 0 0 16px #00eaff44;
+  border: none;
+  transition: box-shadow 0.18s, background 0.18s, color 0.18s;
+}
+.btn-neon-blue:hover, .btn-neon-blue:focus {
+  background: linear-gradient(90deg, #00eaff 0%, #2196f3 100%);
+  color: #fff;
+  box-shadow: 0 0 16px #00eaff, 0 0 32px #2196f3;
+}
+@media (max-width: 768px) {
+  .recent-matches-table th, .recent-matches-table td {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 576px) {
+  #recent-matches .card {
+    border-radius: 1rem !important;
+  }
+  .recent-matches-table th, .recent-matches-table td {
+    font-size: 0.89rem;
+  }
+} 
+
+/* Footer link and social icon styles */
+.footer-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.18s;
+  font-size: 1.05rem;
+}
+.footer-link:hover {
+  color: #2196f3;
+  text-decoration: underline;
+}
+.footer-social-link {
+  color: #e0e0e0;
+  font-size: 1.35rem;
+  transition: color 0.18s, text-shadow 0.18s;
+  text-decoration: none;
+}
+.footer-social-link:hover {
+  color: #00eaff;
+  text-shadow: 0 0 8px #2196f3, 0 0 16px #00eaff44;
+}
+.footer-section h6 {
+  letter-spacing: 1px;
+  font-size: 1.08rem;
+}
+.footer-section ul {
+  padding-left: 0;
+  list-style: none;
+}
+.footer-section .row > div {
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 767px) {
+  .footer-section .row > div {
+    margin-bottom: 1.2rem;
+  }
+} 
+
+/* About Us Section Animations */
+.animate-fadein {
+  opacity: 0;
+  animation: fadeInAbout 1.1s ease 0.2s forwards;
+}
+.animate-slideup {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUpAbout 1.1s cubic-bezier(.4,1.6,.6,1) 0.4s forwards;
+}
+@keyframes fadeInAbout {
+  to { opacity: 1; }
+}
+@keyframes slideUpAbout {
+  to { opacity: 1; transform: none; }
+}
+#about h2 {
+  letter-spacing: 1px;
+}
+#about img {
+  box-shadow: 0 4px 32px 0 #2196f355, 0 0 0 0 #0000;
+  border-radius: 1.5rem;
+}
+@media (max-width: 991px) {
+  #about img {
+    max-width: 320px;
+  }
+}
+@media (max-width: 576px) {
+  #about img {
+    max-width: 98vw;
+    min-width: 0;
+    border-radius: 1rem;
+  }
+  #about h2 {
+    font-size: 1.5rem;
+  }
+} 
